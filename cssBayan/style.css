@@ -1,10 +1,17 @@
 * {
     margin: 0 auto;
     padding: 0, auto;
+    font-family: 'Raleway', sans-serif;
 }
+
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap');
 
 body {
     height: 100%;
+}
+
+header {
+    font-size: 30px;
 }
 
 main .container {
@@ -27,13 +34,12 @@ main .container {
     margin: 20px auto;
 }
 .accor-wrapper .accor-body {
-    width: calc(100% - 40px);
-    margin: 0 auto;
+    width: calc(100% - 4rem);
+    margin: auto;
     height: 0;
     color: rgba(0, 0, 0, 0);
     background-color: #bfffd2;
-    line-height: 18px;
-    padding: 0 30px;
+    line-height: 8rem;
     box-sizing: border-box;
     transition: color 0.5s, padding 0.5s;
     overflow: hidden;
@@ -41,9 +47,26 @@ main .container {
     font-size: 16px;
     box-shadow: 0 4px 8px rgba(0,0,0,0.2), 0 10px 16px rgba(0,0,0,0.2);
 }
-.accor-wrapper .accor-body p {
-    margin: 0 0 10px;
+.accor-wrapper .accor-body img{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    top: 50%
 }
+
+.mem-img {
+    width: 50%;
+}
+
+.mem-img p {
+    position: relative;
+    height: 60px;
+    font-size: 16px;
+    text-align: center;
+    line-height: 20px;
+    margin: auto;
+}
+
 .accor-wrapper label {
     cursor: pointer;
     background-color: #33b749;
