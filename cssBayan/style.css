@@ -123,7 +123,7 @@ main .container {
 
 
 .accor-wrapper .accor-descr .accor-mark {
-    content: url(images/rotate-removebg-preview.png);
+    content: url(./images/rotate-removebg-preview.png);
     position: relative;
     background-color: #2ead44;
     height: 0.7em;
@@ -136,7 +136,7 @@ main .container {
 }
 
 .accor-wrapper input:checked  ~ .accor-mark {
-    content: url(images/rotate-removebg-preview.png);
+    content: url(./images/rotate-removebg-preview.png);
     transform: rotate(180deg);
 }
 
