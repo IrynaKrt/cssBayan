@@ -117,7 +117,13 @@ main .container {
     background-color: #2ead44;
 }
 
+.accor-wrapper input:checked ~ .accor-descr {
+    color: #420f5f;
+}
+
+
 .accor-wrapper .accor-descr .accor-mark {
+    content: url(./images/rotate-removebg-preview.png);
     position: relative;
     background-color: #2ead44;
     height: 0.7em;
@@ -125,26 +131,13 @@ main .container {
     font-weight: 700;
     right: 0;
     text-align: right;
-    margin-left: 420%;
-    top: -1.5rem;
-}
-
-.accor-descr .accor-mark.three {
-    margin-left: 345%;
-}
-
-.accor-descr .accor-mark.five {
-    margin-left: 361%;
-}
-
-.accor-wrapper input:checked ~ .accor-descr {
-    background-color: #2ead44;
-    color: #fff;
+    margin-left: 60vw;
+    transform: rotate(180deg);
 }
 
 .accor-wrapper input:checked  ~ .accor-mark {
-    transition: transform .35s;
-    transform: rotate(90deg);
+    content: url(./images/rotate-removebg-preview.png);
+    transform: rotate(180deg);
 }
 
 .accor-wrapper input:checked ~ .accor-body{
@@ -195,7 +188,7 @@ footer .container a {
     }
 }
 
-@media screen and (max-width: 820px) and (min-width: 330px) {
+@media screen and (max-width: 1320px) and (min-width: 430px) {
 
     .description p{
         width: 85%;
@@ -216,21 +209,12 @@ footer .container a {
     }
 
     .accor-wrapper .accor-descr .accor-mark {
-        margin-left: 342%;
         top: -1rem;
-    }
-
-    .accor-descr .accor-mark.three {
-        margin-left: 280%;
-    }
-
-    .accor-descr .accor-mark.five {
-        margin-left: 294%;
     }
 
 }
 
-@media screen and (max-width: 320px) and (min-width: 280px) {
+@media screen and (max-width: 420px) and (min-width: 250px) {
     .accor-wrapper input:checked + label + .accor-body {
         height: 13.5rem;
     }
@@ -250,22 +234,11 @@ footer .container a {
 
     .accor-wrapper input:checked + label + .accor-body {
         height: 10rem;
-        margin-top: -5px;
         color: #000;
         padding: .4rem .1rem .1rem;
     }
 
-
     .accor-wrapper .accor-descr .accor-mark {
-        margin-left: 257%;
-        top: -.8rem;
-    }
-
-    .accor-descr .accor-mark.three {
-        margin-left: 210%;
-    }
-
-    .accor-descr .accor-mark.five {
-        margin-left: 220%;
+        top: -.7rem;
     }
 }
