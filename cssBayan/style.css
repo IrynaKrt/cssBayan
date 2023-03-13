@@ -5,6 +5,7 @@
     background-color: #420f5f;
     scroll-behavior: smooth;
     font-size: calc(0.5rem + 1vw);
+
 }
 
 @import url('https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap');
@@ -62,15 +63,17 @@ main .container {
     width: calc(100% - 4rem);
     height: 0;
     box-sizing: border-box;
-    transition: color 0.5s, padding 0.5s;
     overflow: hidden;
     background-color: #2ead44;
+    transition: visibility 0s, opacity 0.5s linear;
 }
-.accor-wrapper .accor-body img{
-    position: relative;
-    width: 100%;
-    height: 100%;
-    top: 50%
+.accor-wrapper .accor-container img{
+    position: static;
+    width: 50%;
+    height: 50%;
+    margin: 1rem 10rem;
+    transform: scale();
+    transition: all .3s;
 }
 
 .mem-img {
@@ -101,8 +104,6 @@ main .container {
 }
 
 .accor-wrapper input{
-    visibility: hidden;
-    display: none;
     max-height: 0;
     transform: scale(0.5);
     margin: 0;
@@ -124,7 +125,7 @@ main .container {
 
 .accor-wrapper .accor-descr .accor-mark {
     content: url(./images/rotate-removebg-preview.png);
-    position: relative;
+    position: static;
     background-color: #2ead44;
     height: 0.7em;
     width: 0.7em;
