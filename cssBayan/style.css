@@ -44,6 +44,7 @@ main .container {
 .about-accor {
     margin: 0.5rem auto;
     width: 70%;
+    border: none;
 }
 
 .about-accor h1, h3 {
@@ -239,7 +240,6 @@ footer .container {
 
     .about-accor {
         font-size: 2rem;
-        border-bottom: 0.15rem solid lightgray;
     }
 
     .accor-descr {
@@ -272,7 +272,6 @@ footer .container {
 
     .about-accor {
         font-size: 6rem;
-        border-bottom: 0.15rem solid lightgray;
     }
 
     .accor-descr {
