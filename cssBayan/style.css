@@ -38,6 +38,7 @@ main .container {
     width: 100%;
     height: 1rem;
     border-bottom: .1rem solid #12491b;
+    margin: 1rem 0;
 }
 
 .about-accor {
@@ -55,97 +56,92 @@ main .container {
 }
 
 .accor-wrapper {
-    width: 70%;
-    margin: 0;
-}
-
-.accor-wrapper .accor-body {
-    width: calc(100% - 4rem);
-    height: 0;
-    box-sizing: border-box;
-    overflow: hidden;
-    background-color: #2ead44;
-    transition: visibility 0s, opacity 0.5s linear;
-}
-.accor-wrapper .accor-container img{
-    position: static;
-    width: 50%;
-    height: 50%;
-    margin: 1rem 10rem;
-    transform: scale();
-    transition: all .3s;
-}
-
-.mem-img {
-    width: 50%;
+    color: #000;
     background-color: #2ead44;
 }
 
-.accor-wrapper p.descr {
+.accor-item {
     background-color: #2ead44;
-}
-
-.accor-wrapper {
-    margin: 3rem auto;
-    background-color: #2ead44;
-}
-
-.accor-wrapper label {
-    cursor: pointer;
-    background-color: #2ead44;
-    display: block;
-    padding: .5em 1em;
-    width: 100%;
-    height: 5%;
-    font-weight: 300;
-    box-sizing: border-box;
     border-bottom: .1rem solid #420f5f;
-    transition: color .35s;
 }
 
-.accor-wrapper input{
-    max-height: 0;
+.accor-descr {
+    font-size: 0.7rem;
+    background-color: #2ead44;
+}
+
+.chacor {
+    display: none;
+    background-color: #2ead44;
+}
+
+.accor {
+    padding: 1rem 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: left;
+    flex-wrap: wrap;
+    transition: color 600ms;
+    background-color: #2ead44;
+}
+
+.accor-icon {
+    width: 0.8rem;
+    height: 0.8rem;
+    background-size: cover;
+    background-image: url("./images/rotate-removebg-preview.png");
+    transform: rotate(180deg);
+    background-color: #2ead44;
+}
+
+.accor-descr {
+    display: block;
+    width: 60%;
+    margin: 0 1em;
+}
+
+.accor-body {
+    width: 60%;
+    margin: 1rem auto;
     transform: scale(0.5);
-    margin: 0;
+    max-height: 0;
     opacity: 0;
+    max-width: 30rem;
+
+    transition: transform 600ms,
+    max-height 600ms,
+    opacity 600ms,
+    filter 300ms;
 }
 
-.accor-wrapper .accor-descr{
-    height: 0.7em;
-    display: inline-block;
-    text-align: left;
-    margin: 0;
-    background-color: #2ead44;
+.chacor:checked ~ .accor-icon {
+    transform: rotate(90deg);
 }
 
-.accor-wrapper input:checked ~ .accor-descr {
+.chacor:checked ~ .accor-body {
+    transform: scale(1);
+    max-height: 100rem;
+    opacity: 1;
+}
+
+.chacor:checked + p {
     color: #420f5f;
-}
-
-
-.accor-wrapper .accor-descr .accor-mark {
-    content: url(./images/rotate-removebg-preview.png);
-    position: static;
     background-color: #2ead44;
-    height: 0.7em;
-    width: 0.7em;
-    font-weight: 700;
-    right: 0;
-    text-align: right;
-    margin-left: 60vw;
-    transform: rotate(180deg);
 }
 
-.accor-wrapper input:checked  ~ .accor-mark {
-    content: url(./images/rotate-removebg-preview.png);
-    transform: rotate(180deg);
+.accor:active .accor-icon {
+    background-image: url("./images/rotate-removebg-preview.png");
 }
 
-.accor-wrapper input:checked ~ .accor-body{
-    height: auto;
-    padding: 2rem 1rem 0;
-    cursor: pointer;
+.accor:active .accor-body {
+    filter: brightness(15%);
 }
+
+
+.accor:active .accor-descr {
+    color:  #420f5f;
+}
+
 
 footer {
     position:fixed;
@@ -165,11 +161,13 @@ footer .container a {
     font-size: .7em;
 }
 
- .container {
+footer .container {
     display: flex;
     height: 100%;
+    width: 100%;
     flex-direction: row;
     align-items: center;
+    margin: 0 0;
   }
   .jear p{
     font-weight: 700;
@@ -177,69 +175,117 @@ footer .container a {
     font-size: .7em;
   }
 
-@media screen and (max-width: 1920px) and (min-width: 830px) {
-    .accor-wrapper:hover, input:hover,  .accor-body:hover ~ label.accor-item {
+
+@media (min-width: 1200px) {
+    .container  {
+        width: 70vw;
+    }
+
+    .about-accor {
+        font-size: 3rem;
+    }
+
+    .accor-descr {
+        font-size: 1.5rem;
+    }
+
+    .accor-body {
+        width: 70%;
+    }
+
+    .accor-icon {
+        height: 1.8rem;
+        width: 1.8rem;
+        background-size: cover;
+        transition: transform 300ms ease-out, opacity 300ms;
+    }
+
+    .accor-wrapper:hover .accor-item {
         color: #fff;
     }
 
-    .accor-wrapper input:hover, .accor-body:hover, .accor-body{
-        height: auto;
-        padding: 2rem 1rem 0;
+    .accor-wrapper:hover .accor-icon {
+        opacity: 1;
+    }
+
+    .accor-item:hover .accor-body {
+        transform: scale(1);
+        opacity: 1;
+    }
+
+    .accor-wrapper:hover .accor-item {
+        color: #fff;
+    }
+
+    .accor-wrapper:hover .accor-icon {
+        visibility: visible;
+    }
+
+    .accor-item:hover .accor-body {
+        transform: scale(1);
+        max-height: 200rem;
+        opacity: 1;
+    }
+
+    .accor {
         cursor: pointer;
     }
 }
 
-@media screen and (max-width: 1320px) and (min-width: 430px) {
-
-    .description p{
-        width: 85%;
-        height: 2.5rem;
-        margin: 0.5em auto;
-        text-align: center;
-        padding: 1rem 0;
-        background: linear-gradient(217deg, rgba(255,0,0,.8), rgba(255,0,0,0) 70.71%),  linear-gradient(127deg, rgba(0,255,0,.8), rgba(0,255,0,0) 70.71%),  linear-gradient(336deg, rgba(0,0,255,.8), rgba(0,0,255,0) 70.71%);
+@media (min-width: 600px) {
+    .container {
+        width: 60vw;
     }
 
-    .mem-img {
-        width: 90%;
-        height: 100%;
+    .about-accor {
+        font-size: 2rem;
+        border-bottom: 0.15rem solid lightgray;
     }
 
-    .accor-wrapper {
-        margin: 3rem auto;
+    .accor-descr {
+        font-size: 1.25rem;
     }
 
-    .accor-wrapper .accor-descr .accor-mark {
-        top: -1rem;
+    .accor-body {
+        width: 60%;
     }
 
+    .accor-icon {
+        width: 1.5rem;
+        height: 1.5rem;
+        background-size: cover;
+    }
 }
 
-@media screen and (max-width: 420px) and (min-width: 250px) {
-    .accor-wrapper input:checked + label + .accor-body {
-        height: 13.5rem;
+@media (min-width: 280px) {
+    .description {
+        width: 75%;
     }
 
-    .description p{
-        text-align: center;
-        padding: .7rem 0;
-        background: linear-gradient(217deg, rgba(255,0,0,.8), rgba(255,0,0,0) 70.71%),  linear-gradient(127deg, rgba(0,255,0,.8), rgba(0,255,0,0) 70.71%),  linear-gradient(336deg, rgba(0,0,255,.8), rgba(0,0,255,0) 70.71%);
+    p.greeting {
+        font-size: 1rem;
     }
 
-    .mem-img {
-        width: 90%;
-        padding: auto;
-        margin: auto;
-        top: 1rem;
+    .container {
+        width: 70vw;
     }
 
-    .accor-wrapper input:checked + label + .accor-body {
-        height: 10rem;
-        color: #000;
-        padding: .4rem .1rem .1rem;
+    .about-accor {
+        font-size: 6rem;
+        border-bottom: 0.15rem solid lightgray;
     }
 
-    .accor-wrapper .accor-descr .accor-mark {
-        top: -.7rem;
+    .accor-descr {
+        font-size: 1.25rem;
+    }
+
+    .accor-body {
+        width: 60%;
+    }
+
+    .accor-icon {
+        width: 1.5rem;
+        height: 1.5rem;
+        background-size: cover;
     }
 }
