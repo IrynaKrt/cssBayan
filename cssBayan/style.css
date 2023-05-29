@@ -1,0 +1,290 @@
+* {
+    margin: 0 auto;
+    padding: 0, auto;
+    font-family: 'Raleway', sans-serif;
+    background-color: #420f5f;
+    scroll-behavior: smooth;
+    font-size: calc(0.5rem + 1vw);
+
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap');
+
+body {
+    height: 100%;
+    padding: 0 0 1em;
+}
+
+.description {
+    width: 50%;
+}
+
+.description p.greeting{
+    height: 1.5rem;
+    margin: 1em auto;
+    text-align: center;
+    padding: 2rem 0;
+    border: .2em dashed #000000;
+    background: linear-gradient(217deg, rgba(255,0,0,.8), rgba(255,0,0,0) 70.71%),  linear-gradient(127deg, rgba(0,255,0,.8), rgba(0,255,0,0) 70.71%),  linear-gradient(336deg, rgba(0,0,255,.8), rgba(0,0,255,0) 70.71%);
+}
+
+main .container {
+    display: block;
+    padding: 0;
+}
+
+.line {
+    display: block;
+    width: 100%;
+    height: 1rem;
+    border-bottom: .1rem solid #12491b;
+    margin: 1rem 0;
+}
+
+.about-accor {
+    margin: 0.5rem auto;
+    width: 70%;
+    border: none;
+}
+
+.about-accor h1, h3 {
+    text-align: center;
+}
+
+.about-accor h3 {
+    font-weight: 400;
+    color: rgba(255, 255, 255, .6)
+}
+
+.accor-wrapper {
+    color: #000;
+    background-color: #2ead44;
+}
+
+.accor-item {
+    background-color: #2ead44;
+    border-bottom: .1rem solid #420f5f;
+}
+
+.accor-descr {
+    font-size: 0.7rem;
+    background-color: #2ead44;
+}
+
+.chacor {
+    display: none;
+    background-color: #2ead44;
+}
+
+.accor {
+    padding: 1rem 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: left;
+    flex-wrap: wrap;
+    transition: color 600ms;
+    background-color: #2ead44;
+}
+
+.accor-icon {
+    width: 0.8rem;
+    height: 0.8rem;
+    background-size: cover;
+    background-image: url("./images/rotate-removebg-preview.png");
+    transform: rotate(180deg);
+    background-color: #2ead44;
+}
+
+.accor-descr {
+    display: block;
+    width: 60%;
+    margin: 0 1em;
+}
+
+.accor-body {
+    width: 60%;
+    margin: 1rem auto;
+    transform: scale(0.5);
+    max-height: 0;
+    opacity: 0;
+    max-width: 30rem;
+
+    transition: transform 600ms,
+    max-height 600ms,
+    opacity 600ms,
+    filter 300ms;
+}
+
+.chacor:checked ~ .accor-icon {
+    transform: rotate(90deg);
+}
+
+.chacor:checked ~ .accor-body {
+    transform: scale(1);
+    max-height: 100rem;
+    opacity: 1;
+}
+
+.chacor:checked + p {
+    color: #420f5f;
+    background-color: #2ead44;
+}
+
+.accor:active .accor-icon {
+    background-image: url("./images/rotate-removebg-preview.png");
+}
+
+.accor:active .accor-body {
+    filter: brightness(15%);
+}
+
+
+.accor:active .accor-descr {
+    color:  #420f5f;
+}
+
+
+footer {
+    position:fixed;
+    left:0px;
+    bottom:0px;
+    height: 2rem;
+    width:100%;
+    background-color: #fff;
+    color: #000;
+    border-top: .2em solid #12491b;
+  }
+
+footer .container a {
+    text-decoration: none;
+    font-weight: 700;
+    color: #000;
+    font-size: .7em;
+}
+
+footer .container {
+    display: flex;
+    height: 100%;
+    width: 100%;
+    flex-direction: row;
+    align-items: center;
+    margin: 0 0;
+  }
+  .jear p{
+    font-weight: 700;
+    left: 45rem;
+    font-size: .7em;
+  }
+
+
+@media (min-width: 1200px) {
+    .container  {
+        width: 70vw;
+    }
+
+    .about-accor {
+        font-size: 3rem;
+    }
+
+    .accor-descr {
+        font-size: 1.5rem;
+    }
+
+    .accor-body {
+        width: 70%;
+    }
+
+    .accor-icon {
+        height: 1.8rem;
+        width: 1.8rem;
+        background-size: cover;
+        transition: transform 300ms ease-out, opacity 300ms;
+    }
+
+    .accor-wrapper:hover .accor-item {
+        color: #fff;
+    }
+
+    .accor-wrapper:hover .accor-icon {
+        opacity: 1;
+    }
+
+    .accor-item:hover .accor-body {
+        transform: scale(1);
+        opacity: 1;
+    }
+
+    .accor-wrapper:hover .accor-item {
+        color: #fff;
+    }
+
+    .accor-wrapper:hover .accor-icon {
+        visibility: visible;
+    }
+
+    .accor-item:hover .accor-body {
+        transform: scale(1);
+        max-height: 200rem;
+        opacity: 1;
+    }
+
+    .accor {
+        cursor: pointer;
+    }
+}
+
+@media (min-width: 600px) {
+    .container {
+        width: 60vw;
+    }
+
+    .about-accor {
+        font-size: 2rem;
+    }
+
+    .accor-descr {
+        font-size: 1.25rem;
+    }
+
+    .accor-body {
+        width: 60%;
+    }
+
+    .accor-icon {
+        width: 1.5rem;
+        height: 1.5rem;
+        background-size: cover;
+    }
+}
+
+@media (min-width: 280px) {
+    .description {
+        width: 75%;
+    }
+
+    p.greeting {
+        font-size: 1rem;
+    }
+
+    .container {
+        width: 70vw;
+    }
+
+    .about-accor {
+        font-size: 6rem;
+    }
+
+    .accor-descr {
+        font-size: 1.25rem;
+    }
+
+    .accor-body {
+        width: 60%;
+    }
+
+    .accor-icon {
+        width: 1.5rem;
+        height: 1.5rem;
+        background-size: cover;
+    }
+}
