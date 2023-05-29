@@ -1,4 +1,4 @@
 # cssBayan
 #### This is fine study project!
 
-#### deploy: https://IrynaKrt.github.io/cssBayan/cssBayan/index.html
+#### deploy: [link](https://IrynaKrt.github.io/cssBayan/cssBayan/index.html)
